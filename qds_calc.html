@@ -3,44 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QDS Calculator</title>
+    <title>QDS Attribute Scoring</title>
 </head>
 
 <body>
 
-    <h1>QDS Calculator</h1>
+<h1>QDS Attribute Scoring</h1>
 
-    <!-- Attribute Input Table -->
-    <section>
-        <h2>Attributes</h2>
-        <table id="attributes-table" border="1" cellpadding="5">
-            <thead>
-                <tr>
-                    <th>Attribute Name</th>
-                    <th>Weight</th>
-                    <th>Rating</th>
-                    <th>Product</th>
-                </tr>
-            </thead>
-            <tbody id="attributes-body">
-                <!-- Rows will be added with JavaScript -->
-            </tbody>
-        </table>
+<table border="1" cellpadding="8">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th style="text-align:center;">1</th>
+            <th style="text-align:center;">2</th>
+            <th style="text-align:center;">3</th>
+        </tr>
+    </thead>
 
-        <button id="add-attribute">Add Attribute</button>
-        <button id="calculate">Calculate QDS</button>
-    </section>
+    <tbody>
 
-    <!-- QDS Output -->
-    <section>
-        <h2>Results</h2>
-        <p>Total QDS Score: <span id="qds-score">—</span></p>
-    </section>
+        <tr>
+            <td><strong>Modularity</strong></td>
+            <td><input type="radio" name="modularity" value="1"></td>
+            <td><input type="radio" name="modularity" value="2"></td>
+            <td><input type="radio" name="modularity" value="3"></td>
+        </tr>
 
-    <!-- Placeholder for script -->
-    <script>
-        // JavaScript goes here later
-    </script>
+        <tr>
+            <td><strong>Maintainability</strong></td>
+            <td><input type="radio" name="maintainability" value="1"></td>
+            <td><input type="radio" name="maintainability" value="2"></td>
+            <td><input type="radio" name="maintainability" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Reliability</strong></td>
+            <td><input type="radio" name="reliability" value="1"></td>
+            <td><input type="radio" name="reliability" value="2"></td>
+            <td><input type="radio" name="reliability" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Performance / Efficiency</strong></td>
+            <td><input type="radio" name="performance" value="1"></td>
+            <td><input type="radio" name="performance" value="2"></td>
+            <td><input type="radio" name="performance" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Scalability</strong></td>
+            <td><input type="radio" name="scalability" value="1"></td>
+            <td><input type="radio" name="scalability" value="2"></td>
+            <td><input type="radio" name="scalability" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Security</strong></td>
+            <td><input type="radio" name="security" value="1"></td>
+            <td><input type="radio" name="security" value="2"></td>
+            <td><input type="radio" name="security" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Usability</strong></td>
+            <td><input type="radio" name="usability" value="1"></td>
+            <td><input type="radio" name="usability" value="2"></td>
+            <td><input type="radio" name="usability" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Interoperability</strong></td>
+            <td><input type="radio" name="interoperability" value="1"></td>
+            <td><input type="radio" name="interoperability" value="2"></td>
+            <td><input type="radio" name="interoperability" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Testability</strong></td>
+            <td><input type="radio" name="testability" value="1"></td>
+            <td><input type="radio" name="testability" value="2"></td>
+            <td><input type="radio" name="testability" value="3"></td>
+        </tr>
+
+        <tr>
+            <td><strong>Portability</strong></td>
+            <td><input type="radio" name="portability" value="1"></td>
+            <td><input type="radio" name="portability" value="2"></td>
+            <td><input type="radio" name="portability" value="3"></td>
+        </tr>
+
+    </tbody>
+</table>
 
 </body>
 </html>
