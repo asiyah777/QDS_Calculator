@@ -1,0 +1,361 @@
+/* Base layout and background */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #e7e6e3; /* matches logo background */
+    color: #181c23;            /* dark text from logo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 16px;
+}
+
+/* Centered app container */
+body > * {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 240px;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+}
+
+/* Glass card for the whole table area */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 18px 40px rgba(24, 28, 35, 0.18),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+th, td {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+thead {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+thead th {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+thead th:last-child {
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+/* Hover glow + subtle zoom for each row */
+tbody tr {
+    transition:
+        transform 0.15s ease-out,
+        box-shadow 0.15s ease-out,
+        background-color 0.15s ease-out;
+}
+
+tbody tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 24px rgba(24, 28, 35, 0.25);
+    background-color: rgba(255, 255, 255, 0.26);
+}
+
+/* Attribute column */
+td:first-child {
+    font-weight: 600;
+    color: #181c23;
+    white-space: nowrap;
+}
+
+/* Liquid-glass controls */
+
+/* Button */
+.generate-btn-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.generate-btn-wrapper button,
+button[onclick="generateScore()"] {
+    background: linear-gradient(135deg, rgba(44, 104, 111, 0.85), rgba(44, 104, 111, 0.65));
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow:
+        0 18px 40px rgba(44, 104, 111, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition:
+        transform 0.18s ease-out,
+        box-shadow 0.18s ease-out,
+        background 0.18s ease-out;
+}
+
+.generate-btn-wrapper button:hover,
+button[onclick="generateScore()"]:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 22px 50px rgba(44, 104, 111, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, rgba(44, 104, 111, 0.95), rgba(44, 104, 111, 0.75));
+}
+
+.generate-btn-wrapper button:active,
+button[onclick="generateScore()"]:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow:
+        0 10px 26px rgba(44, 104, 111, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/* Radios styled as glassy pills */
+td input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 4px 10px rgba(24, 28, 35, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    position: relative;
+    transition:
+        transform 0.15s ease-out,
+        box-shadow 0.15s ease-out,
+        background 0.15s ease-out,
+        border-color 0.15s ease-out;
+}
+
+td input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: inherit;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+}
+
+td input[type="radio"]:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 6px 16px rgba(24, 28, 35, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+td input[type="radio"]:checked {
+    background: linear-gradient(135deg, rgba(44, 104, 111, 0.95), rgba(44, 104, 111, 0.75));
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+td input[type="radio"]:checked::before {
+    opacity: 1;
+}
+
+/* Dropdowns with glass style */
+select {
+    width: 100%;
+    max-width: 90px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.25);
+    color: #181c23;
+    font-size: 0.95rem;
+    box-shadow:
+        0 6px 18px rgba(24, 28, 35, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    text-align-last: center;
+    -moz-text-align-last: center;
+    transition:
+        transform 0.15s ease-out,
+        box-shadow 0.15s ease-out,
+        background 0.15s ease-out,
+        border-color 0.15s ease-out;
+}
+
+select:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 10px 24px rgba(24, 28, 35, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+select:focus {
+    border-color: rgba(44, 104, 111, 0.9);
+    box-shadow:
+        0 0 0 1px rgba(44, 104, 111, 0.9),
+        0 10px 26px rgba(24, 28, 35, 0.35);
+}
+
+/* Make weight-radio column centered and spaced */
+td:nth-child(2) {
+    text-align: center;
+    white-space: nowrap;
+}
+
+td:nth-child(4) {
+    text-align: center;
+}
+
+/* Small-screen tweaks */
+@media (max-width: 720px) {
+    body {
+        padding: 24px 10px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    thead th {
+        padding: 10px 8px;
+    }
+
+    tbody td {
+        padding: 8px 8px;
+    }
+
+    .generate-btn-wrapper button,
+    button[onclick="generateScore()"] {
+        width: 100%;
+    }
+}
+
+.instructions {
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+.results {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+.qds-scale {
+  margin-top: 8px;
+}
+
+.qds-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.qds-scale-bar {
+  position: relative;
+  margin-top: 6px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #d9534f, #f0ad4e, #5cb85c);
+}
+
+.qds-indicator-wrapper {
+  position: relative;
+  height: 40px;
+  margin-top: 6px;
+}
+
+.qds-indicator {
+  position: absolute;
+  top: -18px;
+  transform: translateX(-50%);
+  font-size: 18px;
+}
+
+/*
+.qds-score-text {
+  margin-top: 6px;
+  font-weight: 600;
+}
+  */
+
+.qds-attributes {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.qds-suggestions {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.qds-suggestions p {
+  margin: 4px 0;
+}

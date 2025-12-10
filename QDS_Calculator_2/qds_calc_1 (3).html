@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QDS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<img src="DesignIQ.png" alt="DesignIQ Logo" class="logo">
+
+<!-- TABLE 1: ATTRIBUTE IMPORTANCE (WEIGHTS) -->
+<p class="instructions">
+    First, rank the importance of each quality attribute for your system by selecting 
+    <strong>Low</strong>, <strong>Medium</strong>, or <strong>High</strong>.
+</p>
+
+<table border="1" cellpadding="8" style="width:100%;" id="weight-table">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th style="text-align:center;">Low</th>
+            <th style="text-align:center;">Medium</th>
+            <th style="text-align:center;">High</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Modularity</strong></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Maintainability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Reliability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Performance / Efficiency</strong></td>
+            <td style="text-align:center;"><input type="radio" name="performance_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Scalability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Security</strong></td>
+            <td style="text-align:center;"><input type="radio" name="security_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="security_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="security_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Usability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="usability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Interoperability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Testability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="testability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_weight" value="3"></td>
+        </tr>
+        <tr>
+            <td><strong>Portability</strong></td>
+            <td style="text-align:center;"><input type="radio" name="portability_weight" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_weight" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_weight" value="3"></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- TABLE 2: ATTRIBUTE QUESTIONS (LIKERT SCALE) -->
+<p class="instructions">
+    Next, answer each question about how your current system behaves.
+</p>
+
+<table border="1" cellpadding="8" style="width:100%;" id="question-table">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th style="text-align:center;">Disagree</th>
+            <th style="text-align:center;">Slightly Disagree</th>
+            <th style="text-align:center;">Neutral</th>
+            <th style="text-align:center;">Slightly Agree</th>
+            <th style="text-align:center;">Agree</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Modularity -->
+        <tr>
+            <td>How well is the system divided into independent, manageable components?</td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Can individual modules be updated or replaced with minimal impact on the rest of the system?</td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="modularity_q2" value="5"></td>
+        </tr>
+
+        <!-- Maintainability -->
+        <tr>
+            <td>How easy is it to modify, update, or extend the system?</td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Can developers quickly understand where to make changes when requirements evolve?</td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="maintainability_q2" value="5"></td>
+        </tr>
+
+        <!-- Reliability -->
+        <tr>
+            <td>How likely is the system to operate without failures during a given period?</td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Are failures handled gracefully so the system continues to provide core functionality?</td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="reliability_q2" value="5"></td>
+        </tr>
+
+        <!-- Performance -->
+        <tr>
+            <td>Does the architecture meet expected performance needs (speed, throughput, latency)?</td>
+            <td style="text-align:center;"><input type="radio" name="performance_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Does the system maintain acceptable response times under peak or stress conditions?</td>
+            <td style="text-align:center;"><input type="radio" name="performance_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="performance_q2" value="5"></td>
+        </tr>
+
+        <!-- Scalability -->
+        <tr>
+            <td>How well can the system handle increased load without redesign?</td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Can capacity be increased primarily by adding instances or resources, not redesigning the system?</td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="scalability_q2" value="5"></td>
+        </tr>
+
+        <!-- Security -->
+        <tr>
+            <td>Does the design adequately protect against threats and vulnerabilities?</td>
+            <td style="text-align:center;"><input type="radio" name="security_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Are sensitive operations (e.g., authentication, payments) protected with strong controls and auditing?</td>
+            <td style="text-align:center;"><input type="radio" name="security_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="security_q2" value="5"></td>
+        </tr>
+
+        <!-- Usability -->
+        <tr>
+            <td>Does the architecture support an intuitive and effective user experience?</td>
+            <td style="text-align:center;"><input type="radio" name="usability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Can typical users complete key tasks without extensive training or documentation?</td>
+            <td style="text-align:center;"><input type="radio" name="usability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="usability_q2" value="5"></td>
+        </tr>
+
+        <!-- Interoperability -->
+        <tr>
+            <td>How easily can the system interact or integrate with other systems?</td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Does the system expose or consume APIs in a way that other systems can use with minimal friction?</td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="interoperability_q2" value="5"></td>
+        </tr>
+
+        <!-- Testability -->
+        <tr>
+            <td>Is it easy to verify system behavior through automated or manual testing?</td>
+            <td style="text-align:center;"><input type="radio" name="testability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Can developers easily add new automated tests for new features or bug fixes?</td>
+            <td style="text-align:center;"><input type="radio" name="testability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="testability_q2" value="5"></td>
+        </tr>
+
+        <!-- Portability -->
+        <tr>
+            <td>Can the system be deployed on different platforms with minimal changes?</td>
+            <td style="text-align:center;"><input type="radio" name="portability_q1" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q1" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q1" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q1" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q1" value="5"></td>
+        </tr>
+        <tr>
+            <td>Can the system move to a different OS or cloud environment with minimal configuration changes?</td>
+            <td style="text-align:center;"><input type="radio" name="portability_q2" value="1"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q2" value="2"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q2" value="3"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q2" value="4"></td>
+            <td style="text-align:center;"><input type="radio" name="portability_q2" value="5"></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="generate-btn-wrapper">
+    <button id="generate-btn" disabled>
+        Generate Quantitative Design Score
+    </button>
+</div>
+
+<!-- RESULTS AREA -->
+<div id="results" class="results" style="display:none;">
+    <h2>Quantitative Design Score (QDS)</h2>
+
+    <div class="qds-scale-bar">
+    </div>
+
+    <div id="qds-indicator-wrapper" class="qds-indicator-wrapper">
+        <div id="qds-indicator" class="qds-indicator">▲</div>
+        <div id="qds-value" class="qds-value">–</div>
+    </div>
+
+
+    <div class="qds-attributes">
+        <p><strong>Strongest attribute(s):</strong> <span id="strong-attributes">–</span></p>
+        <p><strong>Weakest attribute(s):</strong> <span id="weak-attributes">–</span></p>
+    </div>
+
+    <div id="suggestions" class="qds-suggestions"></div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+
+</html>
