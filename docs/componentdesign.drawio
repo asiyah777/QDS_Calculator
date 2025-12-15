@@ -1,11 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="au15soMIkBPEh3s4vrRi" name="Page-1">
-        <mxGraphModel dx="1497" dy="490" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1349" dy="490" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="«subsystem»&lt;div&gt;QdsCalculator&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;align=center;verticalAlign=top;fillColor=#eeeeee;strokeColor=#36393d;spacingLeft=100;spacingRight=520;spacing=2;" parent="1" vertex="1">
-                    <mxGeometry x="119.64" y="30" width="510.36" height="370" as="geometry"/>
+                    <mxGeometry x="125" y="40" width="510.36" height="370" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="2" vertex="1">
                     <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
@@ -167,7 +167,7 @@
                 </mxCell>
                 <mxCell id="134" value="eventHandler()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="128">
                     <mxGeometry x="-0.0025" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
+                        <mxPoint x="16" y="10" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="133" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="1" source="122">
